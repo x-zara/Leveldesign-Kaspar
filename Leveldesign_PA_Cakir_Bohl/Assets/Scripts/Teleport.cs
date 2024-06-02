@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,10 +30,12 @@ public class Teleport : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             print(_playerTransform.position);
+            other.GetComponent<FirstPersonController>().gameObject.SetActive(false);
             Vector3 targetPosition = newTransform.position;
             Quaternion targetRotation = newTransform.rotation;
             other.transform.position = targetPosition;
             other.transform.rotation = targetRotation;
+            other.GetComponent<FirstPersonController>().gameObject.SetActive(true);
             print(_playerTransform.position);
         }
     }
