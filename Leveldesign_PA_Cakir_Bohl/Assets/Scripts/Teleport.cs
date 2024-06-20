@@ -7,9 +7,13 @@ public class Teleport : MonoBehaviour
 {
     public Transform newTransform;
 
+    public bool _hasKey;
+    
     private Transform _playerTransform;
 
     private GameObject _player;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +31,7 @@ public class Teleport : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && _hasKey)
         {
             print(_playerTransform.position);
             other.GetComponent<FirstPersonController>().gameObject.SetActive(false);
