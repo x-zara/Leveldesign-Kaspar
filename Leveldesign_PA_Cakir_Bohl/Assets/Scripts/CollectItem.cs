@@ -5,6 +5,8 @@ using UnityEngine;
 public class CollectItem : MonoBehaviour
 {
     public GameObject pressE;
+
+    private GameObject _key;
     
     private Teleport _teleport;
 
@@ -15,7 +17,8 @@ public class CollectItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _teleport = GameObject.Find("Teleport-Trigger").GetComponent<Teleport>();
+        _teleport = GameObject.Find("Teleport_Trigger").GetComponent<Teleport>();
+        _key = gameObject.transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class CollectItem : MonoBehaviour
             pressE.gameObject.SetActive(false);
             _teleport._hasKey = true;
             gameObject.SetActive(false);
+            _key.SetActive(false);
         }
     }
 

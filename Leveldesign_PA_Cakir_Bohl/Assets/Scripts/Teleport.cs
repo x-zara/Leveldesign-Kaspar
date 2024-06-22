@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
+    public GameObject text;
+    
     public Transform newTransform;
 
     public bool _hasKey;
@@ -20,6 +22,7 @@ public class Teleport : MonoBehaviour
     {
         _playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         _player = GameObject.Find("Player");
+        text.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,5 +45,14 @@ public class Teleport : MonoBehaviour
             other.GetComponent<FirstPersonController>().gameObject.SetActive(true);
             print(_playerTransform.position);
         }
+        else
+        {
+            text.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        text.gameObject.SetActive(false);
     }
 }
