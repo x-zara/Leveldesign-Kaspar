@@ -455,7 +455,7 @@ PrefabInstance:
     - target: {fileID: 4505022395488208283, guid: 07645dd9a36a8e9448e0dec741f8b343,
         type: 3}
       propertyPath: m_Name
-      value: WoodenBox2
+      value: Bett
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
