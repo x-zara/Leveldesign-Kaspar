@@ -34,10 +34,16 @@ public class LookAtItem : MonoBehaviour
     void Update()
     {
         // If the E key is pressed and the character is in range: disable the 'press E' text and enablle the corresponding item description
-        if (Input.GetKeyDown(KeyCode.E) && inRange)
+        if (Input.GetKeyDown(KeyCode.E) && inRange && !itemImage.gameObject.activeSelf)
         {
             pressE.gameObject.SetActive(false);
             itemImage.gameObject.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && inRange && itemImage.gameObject.activeSelf)
+        {
+            StartCoroutine(WaitForAnimation());
+            itemImage.gameObject.SetActive(true);
+            pressE.gameObject.SetActive(true);
         }
 
 

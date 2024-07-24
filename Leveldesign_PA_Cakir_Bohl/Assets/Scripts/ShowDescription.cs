@@ -26,10 +26,15 @@ public class ShowDescription : MonoBehaviour
     void Update()
     {
         // If the E key is pressed and the character is in range: disable the 'press E' text and enablle the corresponding item description
-        if(Input.GetKeyDown(KeyCode.E) && inRange)
+        if(Input.GetKeyDown(KeyCode.E) && inRange && itemDescription.gameObject.activeSelf == false)
         {
             pressE.gameObject.SetActive(false);
             itemDescription.gameObject.SetActive(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.E) && inRange && itemDescription.gameObject.activeSelf == true)
+        {
+            itemDescription.gameObject.SetActive(false);
+            pressE.gameObject.SetActive(true);
         }
     }
 

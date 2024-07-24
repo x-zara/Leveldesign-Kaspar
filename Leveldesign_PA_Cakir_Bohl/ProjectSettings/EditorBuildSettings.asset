@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Szene_1.unity
+    path: "Assets/Scenes/Au\xDFenszene.unity"
     guid: 89929e2002fbaa74ca3455b1f43d5c6a
   - enabled: 1
     path: Assets/Scenes/Haus_1.unity

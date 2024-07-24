@@ -8,7 +8,7 @@ public class CollectItem : MonoBehaviour
 
     private GameObject _key;
     
-    private Teleport _teleport;
+    private LockedDoor _lockedDoor;
 
     private bool _inRange;
 
@@ -17,7 +17,7 @@ public class CollectItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _teleport = GameObject.Find("Teleport_Trigger").GetComponent<Teleport>();
+        _lockedDoor = GameObject.Find("Teleport_Trigger").GetComponent<LockedDoor>();
         _key = gameObject.transform.parent.gameObject;
     }
 
@@ -27,7 +27,7 @@ public class CollectItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _inRange)
         {
             pressE.gameObject.SetActive(false);
-            _teleport._hasKey = true;
+            _lockedDoor._hasKey = true;
             gameObject.SetActive(false);
             _key.SetActive(false);
         }
