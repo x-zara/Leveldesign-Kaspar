@@ -4424,6 +4424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hasPlayed: 1
   text: {fileID: 1727306635}
+  nextSceneIndex: 2
 --- !u!65 &2133304531
 BoxCollider:
   m_ObjectHideFlags: 0

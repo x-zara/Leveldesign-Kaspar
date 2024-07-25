@@ -26,7 +26,6 @@ public class Teleport : MonoBehaviour
         _playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         _player = GameObject.Find("Player");
         _firstPersonController = _player.GetComponent<FirstPersonController>();
-        //text.gameObject.SetActive(false);
         _animator = GameObject.Find("Blackscreen").GetComponent<Animator>();
     }
 
@@ -38,6 +37,5 @@ public class Teleport : MonoBehaviour
         // https://docs.unity3d.com/ScriptReference/WaitForSeconds.html
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(sceneIndex);
-        //_animator.gameObject.SetActive(false)
     }
 }

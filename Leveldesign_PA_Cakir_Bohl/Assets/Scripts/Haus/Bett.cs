@@ -8,6 +8,8 @@ public class Bett : MonoBehaviour
 
     public GameObject text;
 
+    public int nextSceneIndex;
+
     private Teleport _teleport;
 
     // Start is called before the first frame update
@@ -24,7 +26,9 @@ public class Bett : MonoBehaviour
         if(text.activeSelf && Input.GetKeyUp(KeyCode.E))
         {
             text.SetActive(false);
-            StartCoroutine(_teleport.LoadNextScene(2));
+            ProgressionManager.Instance.progress++;
+            ProgressionManager.Instance.wasInHouse = true;
+            StartCoroutine(_teleport.LoadNextScene(nextSceneIndex));
         }
     }
 

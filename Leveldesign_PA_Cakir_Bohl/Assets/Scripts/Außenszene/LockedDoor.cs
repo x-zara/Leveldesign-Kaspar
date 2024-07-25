@@ -15,6 +15,8 @@ public class LockedDoor : MonoBehaviour
     {
         _hasKey = false;
 
+        text.gameObject.SetActive(false);
+
         _teleport = GetComponent<Teleport>();
     }
 
