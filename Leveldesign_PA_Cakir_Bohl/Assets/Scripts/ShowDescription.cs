@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class ShowDescription : MonoBehaviour
 {
-    // The audio is supposed to play
-    public AudioClip audioClip;
-
-    // The subtitles that are supposed to be shown
-    public string subtitles;
-
     // The description of the item that's being looked at
     public TextMeshProUGUI itemDescription;
 
@@ -19,9 +13,6 @@ public class ShowDescription : MonoBehaviour
 
     // A boolean that determines if the player is close enough to the object to press E
     private bool inRange;
-
-    // Reference to the KasparCommentary script
-    private KasparCommentary _kasparCommentary;
     
     // Start is called before the first frame update
     void Start()
@@ -29,30 +20,28 @@ public class ShowDescription : MonoBehaviour
         // Disable all text objects
         itemDescription.gameObject.SetActive(false);
         pressE.gameObject.SetActive(false);
-        _kasparCommentary = Camera.main.GetComponent<KasparCommentary>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // If the E key is pressed and the character is in range: disable the 'press E' text and enablle the corresponding item description
-        if(Input.GetKeyDown(KeyCode.E) && inRange)
+        if(Input.GetKeyDown(KeyCode.E) && inRange && itemDescription.gameObject.activeSelf == false)
         {
             pressE.gameObject.SetActive(false);
-            StartCoroutine(_kasparCommentary.PlayAudioAndSetText(audioClip, subtitles));
+            itemDescription.gameObject.SetActive(true);
         }
-        /*else if(Input.GetKeyDown(KeyCode.E) && inRange && itemDescription.gameObject.activeSelf == true)
+        else if(Input.GetKeyDown(KeyCode.E) && inRange && itemDescription.gameObject.activeSelf == true)
         {
             itemDescription.gameObject.SetActive(false);
             pressE.gameObject.SetActive(true);
-        }*/
+        }
     }
 
     // On Trigger Enter: enable the 'press E' text and set inRange to true
     private void OnTriggerEnter(Collider other)
     {
         pressE.gameObject.SetActive(true);
-        itemDescription.gameObject.SetActive(true);
         inRange = true;
     }
 

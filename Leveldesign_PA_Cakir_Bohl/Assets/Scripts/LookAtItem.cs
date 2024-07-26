@@ -7,13 +7,6 @@ using UnityEngine.UI;
 
 public class LookAtItem : MonoBehaviour
 {
-    // The audio is supposed to play
-    public AudioClip audioClip;
-
-    // The subtitles that are supposed to be shown
-    public string subtitles;
-
-    // Reference to the animation clip
     public AnimationClip animationClip;
     
     // The corresponding RawImage
@@ -27,10 +20,7 @@ public class LookAtItem : MonoBehaviour
 
     // Reference to the animator of the image
     private Animator _animator;
-
-    // Reference to the KasparCommentary script
-    private KasparCommentary _kasparCommentary;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +28,6 @@ public class LookAtItem : MonoBehaviour
         _animator = itemImage.GetComponent<Animator>();
         itemImage.gameObject.SetActive(false);
         pressE.gameObject.SetActive(false);
-        _kasparCommentary = Camera.main.GetComponent<KasparCommentary>();
     }
 
     // Update is called once per frame
@@ -49,8 +38,6 @@ public class LookAtItem : MonoBehaviour
         {
             pressE.gameObject.SetActive(false);
             itemImage.gameObject.SetActive(true);
-            StartCoroutine(_kasparCommentary.PlayAudioAndSetText(audioClip, subtitles));
-
         }
         else if (Input.GetKeyDown(KeyCode.E) && inRange && itemImage.gameObject.activeSelf)
         {
