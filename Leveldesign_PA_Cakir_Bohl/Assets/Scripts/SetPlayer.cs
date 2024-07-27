@@ -15,7 +15,7 @@ public class SetPlayer : MonoBehaviour
 
     private void Start()
     {
-        if (ProgressionManager.Instance.progress > 1)
+        if (ProgressionManager.Instance.progress > 2)
         {
             print("shshshs");
             _player = GameObject.Find("Player");

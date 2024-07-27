@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -9,6 +10,16 @@ public class MenuManager : MonoBehaviour
     public GameObject pauseMenuDialogue;
     public bool isInfoOn;
     public bool isPaused = false;
+    public Image _reversedBlackScreen;
+
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Time.timeScale = 1.0f;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
 
     void Update()
     {
@@ -49,7 +60,9 @@ public class MenuManager : MonoBehaviour
     public void RestartGame()
     {
         //Szene neu starten
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ProgressionManager.Instance.progress = 0;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 
     // Zurück zum Hauptmenü über Pausemenü

@@ -23,13 +23,17 @@ public class Bett : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(text.activeSelf && Input.GetKeyUp(KeyCode.E))
+        if (_hasPlayed)
         {
-            text.SetActive(false);
-            ProgressionManager.Instance.progress++;
-            ProgressionManager.Instance.wasInHouse = true;
-            StartCoroutine(_teleport.LoadNextScene(nextSceneIndex));
+            if(text.activeSelf && Input.GetKeyUp(KeyCode.E))
+            {
+                text.SetActive(false);
+                ProgressionManager.Instance.progress++;
+                ProgressionManager.Instance.wasInHouse = true;
+                StartCoroutine(_teleport.LoadNextScene(nextSceneIndex));
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
