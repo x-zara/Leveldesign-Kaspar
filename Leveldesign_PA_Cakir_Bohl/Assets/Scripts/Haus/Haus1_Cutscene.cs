@@ -32,6 +32,7 @@ public class Haus1_Cutscene : MonoBehaviour
     // The audio source from the next room
     private AudioSource _nextRoom;
 
+    // The subtitles
     private TMP_Text _text;
 
     // Start is called before the first frame update
@@ -79,8 +80,6 @@ public class Haus1_Cutscene : MonoBehaviour
         _nextRoom.Stop();
         yield return _kasparCommentary.PlayAudioAndSetText(audioClips[0], subtitles[0]);
         yield return _kasparCommentary.PlayAudioAndSetText(audioClips[1], subtitles[1]);
-        //StartCoroutine(OtherRoomAudio(audioClips[2], subtitles[2]));
-        //StartCoroutine(OtherRoomAudio(audioClips[2], subtitles[2]));
         yield return OtherRoomAudio(audioClips[2], subtitles[2]);
         yield return OtherRoomAudio(audioClips[3], subtitles[3]);
 

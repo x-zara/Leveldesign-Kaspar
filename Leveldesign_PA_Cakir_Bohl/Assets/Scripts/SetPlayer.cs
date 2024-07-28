@@ -6,12 +6,20 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class SetPlayer : MonoBehaviour
 {
+    // The audio that is supposed to be played
+    public AudioClip audioClip;
+
+    // The subtitles that are supposed to be displayed
+    public string subtitles;
 
     private GameObject _player;
 
     private FirstPersonController _firstPersonController;
 
     private Transform _teleportTransform;
+
+    // Reference to the kaspar commentary script
+    private KasparCommentary _kasparCommentary;
 
     private void Start()
     {
@@ -24,7 +32,13 @@ public class SetPlayer : MonoBehaviour
             _firstPersonController.gameObject.SetActive(false);
             _player.transform.SetPositionAndRotation(_teleportTransform.position, _teleportTransform.rotation);
             _firstPersonController.gameObject.SetActive(true);
-
+            _kasparCommentary = Camera.main.GetComponent<KasparCommentary>();
         }
+    }
+
+    private IEnumerator DorfKommentar()
+    {
+        yield return new WaitForSeconds(3);
+        yield return _kasparCommentary.PlayAudioAndSetText(audioClip, subtitles);
     }
 }
