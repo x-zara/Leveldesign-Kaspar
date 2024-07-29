@@ -32,12 +32,13 @@ public class KerkerAudio : MonoBehaviour
         _kasparCommentary = Camera.main.GetComponent<KasparCommentary>();
         _firstPersonController = GameObject.Find("Player").GetComponent<FirstPersonController>();
         _animator = GameObject.Find("Blackscreen").GetComponent<Animator>();
+        StartCoroutine(KerkerMonolog());
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(KerkerMonolog());
+        
     }
 
     private IEnumerator KerkerMonolog()
@@ -46,7 +47,7 @@ public class KerkerAudio : MonoBehaviour
         yield return _kasparCommentary.PlayAudioAndSetText(audioClips[0], subtitles[0]);
         yield return _kasparCommentary.PlayAudioAndSetText(audioClips[1], subtitles[1]);
         _animator.SetTrigger("hasInteracted");
-        yield return new WaitForSeconds(animationClip.length);
+        yield return new WaitForSeconds(animationClip.length + 2);
         SceneManager.LoadScene(4);
     }
 }

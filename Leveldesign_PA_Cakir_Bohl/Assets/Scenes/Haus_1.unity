@@ -1349,6 +1349,8 @@ GameObject:
   - component: {fileID: 487369698}
   - component: {fileID: 487369700}
   - component: {fileID: 487369699}
+  - component: {fileID: 487369702}
+  - component: {fileID: 487369701}
   m_Layer: 5
   m_Name: Overlay
   m_TagString: Untagged
@@ -1413,6 +1415,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487369697}
   m_CullTransparentMesh: 1
+--- !u!95 &487369701
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487369697}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d847e67c3e0c994e991f57d2af1866d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &487369702
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487369697}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &488596739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3739,12 +3774,12 @@ PrefabInstance:
     - target: {fileID: 1982106476470967700, guid: 742f72a22d5e24c0eb6d1b58f4bdeca6,
         type: 3}
       propertyPath: subtitles.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1982106476470967700, guid: 742f72a22d5e24c0eb6d1b58f4bdeca6,
         type: 3}
       propertyPath: audioClips.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1982106476470967700, guid: 742f72a22d5e24c0eb6d1b58f4bdeca6,
         type: 3}
@@ -3768,6 +3803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1982106476470967700, guid: 742f72a22d5e24c0eb6d1b58f4bdeca6,
         type: 3}
+      propertyPath: subtitles.Array.data[4]
+      value: Alles gut? Die schienst kurz weit weg gewesen zu sein.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982106476470967700, guid: 742f72a22d5e24c0eb6d1b58f4bdeca6,
+        type: 3}
       propertyPath: audioClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 8fc6d8316c412904d9f435790e05c8e8, type: 3}
@@ -3786,6 +3826,11 @@ PrefabInstance:
       propertyPath: audioClips.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: f77886e74139f85479d847d3c8dae115, type: 3}
+    - target: {fileID: 1982106476470967700, guid: 742f72a22d5e24c0eb6d1b58f4bdeca6,
+        type: 3}
+      propertyPath: audioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8bff59dcf15fb0c408e517f4ea48aefc, type: 3}
     - target: {fileID: 7050214641404146466, guid: 742f72a22d5e24c0eb6d1b58f4bdeca6,
         type: 3}
       propertyPath: m_Name

@@ -19,6 +19,10 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1.0f;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     void Update()
@@ -36,6 +40,11 @@ public class MenuManager : MonoBehaviour
         pauseMenuDialogue.SetActive(isPaused);
 
         Time.timeScale = isPaused ? 0 : 1;
+
+        if(!isPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public void Info(bool doInfo)

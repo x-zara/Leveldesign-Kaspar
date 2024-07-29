@@ -24,7 +24,10 @@ public class Marktplatz : MonoBehaviour
     public string[] subtitlesFemale;
 
     // The subtitles
-    private TMP_Text _text;
+    public TMP_Text _text;
+
+    // Boolean to check is the couroutine is already running
+    private bool _isPlaying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,13 +43,18 @@ public class Marktplatz : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _text = GameObject.Find("Subtitles").GetComponent<TMP_Text>();
-        StartCoroutine(MarktPlatzMurmeln());
+        if(!_isPlaying)
+        {
+            StartCoroutine(MarktPlatzMurmeln());
+            _isPlaying = true;
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
         StopCoroutine(MarktPlatzMurmeln());
+        _text.gameObject.SetActive(false);
     }
 
     private IEnumerator MarktPlatzMurmeln()

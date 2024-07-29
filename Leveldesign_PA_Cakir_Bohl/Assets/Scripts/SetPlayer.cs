@@ -2,15 +2,14 @@ using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class SetPlayer : MonoBehaviour
 {
     // The audio that is supposed to be played
-    public AudioClip audioClip;
+    public AudioClip[] audioClips;
 
     // The subtitles that are supposed to be displayed
-    public string subtitles;
+    public string[] subtitles;
 
     private GameObject _player;
 
@@ -33,12 +32,17 @@ public class SetPlayer : MonoBehaviour
             _player.transform.SetPositionAndRotation(_teleportTransform.position, _teleportTransform.rotation);
             _firstPersonController.gameObject.SetActive(true);
             _kasparCommentary = Camera.main.GetComponent<KasparCommentary>();
+            StartCoroutine(DorfKommentar());
         }
     }
 
     private IEnumerator DorfKommentar()
     {
         yield return new WaitForSeconds(3);
-        yield return _kasparCommentary.PlayAudioAndSetText(audioClip, subtitles);
+        yield return _kasparCommentary.PlayAudioAndSetText(audioClips[0], subtitles[0]);
+        yield return new WaitForSeconds(3);
+        yield return _kasparCommentary.PlayAudioAndSetText(audioClips[1], subtitles[1]);
+        yield return new WaitForSeconds(1);
+        yield return _kasparCommentary.PlayAudioAndSetText(audioClips[2], subtitles[2]);
     }
 }

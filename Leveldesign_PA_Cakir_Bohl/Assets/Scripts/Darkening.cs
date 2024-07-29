@@ -10,25 +10,37 @@ public class Darkening : MonoBehaviour
 
     private float _darkeningRate;
 
+    // Boolean to describe if the player has entered the collider
+    private bool _hasEntered = false;
+    
+    // Start is called before the first frame update
     private void Start()
     {
         _blackscreen = GameObject.Find("Blackscreen_Kerker").GetComponent<CanvasGroup>();
     }
-    // Start is called before the first frame update
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if(other.CompareTag("Player"))
+        
+        if(_hasEntered)
         {
             _blackscreen.alpha = Mathf.Lerp(0, 1, _darkeningRate);
 
             _darkeningRate += 0.15f * Time.deltaTime;
 
-
-            if(_blackscreen.alpha >= 1)
+            if (_blackscreen.alpha >= 1)
             {
-                SceneManager.LoadScene(3);
+            SceneManager.LoadScene(3);
             }
         }
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            _hasEntered = true;
+        }
+        
     }
 }

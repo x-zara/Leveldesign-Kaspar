@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Haus1_Cutscene : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class Haus1_Cutscene : MonoBehaviour
     // The subtitles
     private TMP_Text _text;
 
+    private Animator _overlayAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,8 @@ public class Haus1_Cutscene : MonoBehaviour
         _isPlaying = false;
         _nextRoom = GameObject.Find("Nebenan").GetComponent<AudioSource>();
         _text = GameObject.Find("Subtitles").GetComponent<TMP_Text>();
+        _overlayAnimator = GameObject.Find("Overlay").GetComponent<Animator>();
+        _overlayAnimator.enabled = false;
     }
 
 
@@ -82,7 +87,10 @@ public class Haus1_Cutscene : MonoBehaviour
         yield return _kasparCommentary.PlayAudioAndSetText(audioClips[1], subtitles[1]);
         yield return OtherRoomAudio(audioClips[2], subtitles[2]);
         yield return OtherRoomAudio(audioClips[3], subtitles[3]);
-
+        yield return new WaitForSeconds(2);
+        _overlayAnimator.enabled = true;
+        yield return new WaitForSeconds(3);
+        yield return _kasparCommentary.PlayAudioAndSetText(audioClips[4], subtitles[4]);
 
 
         _bett._hasPlayed = true;

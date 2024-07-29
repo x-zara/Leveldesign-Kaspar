@@ -24578,6 +24578,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 32167822}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &917399696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8868009170693948351, guid: 7833f5c64f23e9f4bbff302d1045a089,
+    type: 3}
+  m_PrefabInstance: {fileID: 511592157618836374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &917911919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27852,9 +27864,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de30978029fbe14ba9451dbb7cfd483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 333924b0b06f57149909cd182f470bd7, type: 3}
-  subtitles: Was ist denn mit dir los, du bist ja ganz- Dieser Ort... Vergiss es
-    einfach!
+  audioClips:
+  - {fileID: 8300000, guid: b57fd6529ee3cba45aba1d37b4beb142, type: 3}
+  - {fileID: 8300000, guid: 333924b0b06f57149909cd182f470bd7, type: 3}
+  - {fileID: 8300000, guid: 2e4c655491c5c3a448e83e2db1167ffa, type: 3}
+  subtitles:
+  - Was ist denn mit dir los? Du bist ja ganz-
+  - Dieser Ort...
+  - Vergiss es einfach!
 --- !u!1001 &1049493609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37023,7 +37040,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.8
+      value: 35.298
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -37033,7 +37050,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 122.2
+      value: 122.879
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -41928,6 +41945,7 @@ MonoBehaviour:
   - Hat der Junge denn keine Eltern?
   - Wo der wohl herkommt?
   - Wir sollten lieber den Wachtmeister holen.
+  _text: {fileID: 917399696}
 --- !u!4 &1574950497
 Transform:
   m_ObjectHideFlags: 0
@@ -57250,7 +57268,7 @@ PrefabInstance:
     - target: {fileID: 6486653420349317317, guid: 8889d9fd04ab0114393f3d8a97161909,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.8
+      value: 35.298
       objectReference: {fileID: 0}
     - target: {fileID: 6486653420349317317, guid: 8889d9fd04ab0114393f3d8a97161909,
         type: 3}
@@ -57260,7 +57278,7 @@ PrefabInstance:
     - target: {fileID: 6486653420349317317, guid: 8889d9fd04ab0114393f3d8a97161909,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 122.2
+      value: 122.879
       objectReference: {fileID: 0}
     - target: {fileID: 6486653420349317317, guid: 8889d9fd04ab0114393f3d8a97161909,
         type: 3}
