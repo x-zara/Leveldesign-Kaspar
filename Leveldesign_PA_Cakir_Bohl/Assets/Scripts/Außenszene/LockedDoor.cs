@@ -49,7 +49,7 @@ public class LockedDoor : MonoBehaviour
 
         if (other.CompareTag("Player") && _hasKey)
         {
-            ProgressionManager.Instance.progress++;
+            //ProgressionManager.Instance.progress++;
             StartCoroutine(_teleport.LoadNextScene(1));
         }
         else
