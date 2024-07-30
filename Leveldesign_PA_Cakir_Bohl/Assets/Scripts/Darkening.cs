@@ -1,8 +1,10 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Darkening : MonoBehaviour
 {
@@ -15,12 +17,17 @@ public class Darkening : MonoBehaviour
 
     // Reference to the teleport script
     private Teleport _teleport;
-    
+
+    private FirstPersonController _firstPersonController;
+
+
+
     // Start is called before the first frame update
     private void Start()
     {
         _blackscreen = GameObject.Find("Blackscreen_Kerker").GetComponent<CanvasGroup>();
         _teleport = GameObject.Find("Teleport_Trigger").GetComponent<Teleport>();
+        _firstPersonController = GameObject.Find("Player").GetComponent<FirstPersonController>();
     }
 
     private void Update()
@@ -44,6 +51,7 @@ public class Darkening : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             _hasEntered = true;
+            _firstPersonController.enabled = false;
         }
         
     }

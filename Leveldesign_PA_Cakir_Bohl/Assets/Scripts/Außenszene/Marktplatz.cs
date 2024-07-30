@@ -66,7 +66,8 @@ public class Marktplatz : MonoBehaviour
         yield return OutsideAudio(audioSourcesMale[0], audioClipsMale[2], subtitlesMale[2]);
         yield return OutsideAudio(audioSourcesFemale[0], audioClipsFemale[2], subtitlesFemale[2]);
         yield return OutsideAudio(audioSourcesMale[1], audioClipsMale[3], subtitlesMale[3]);
-        yield return OutsideAudio(audioSourcesFemale[1], audioClipsFemale[3], subtitlesFemale[3]);
+        yield return OutsideAudio(audioSourcesFemale[0], audioClipsFemale[3], subtitlesFemale[3]);
+        yield return OutsideAudio(audioSourcesFemale[1], audioClipsFemale[4], subtitlesFemale[4]);
         yield return OutsideAudio(audioSourcesMale[0], audioClipsMale[4], subtitlesMale[4]);
     }
 
