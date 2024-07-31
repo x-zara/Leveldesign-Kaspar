@@ -19,6 +19,9 @@ public class Haus2_Door : MonoBehaviour
     // Reference to the first person controller script
     private FirstPersonController _firstPersonController;
 
+    // The camera's audio source
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class Haus2_Door : MonoBehaviour
         _overlayAnimator = GameObject.Find("Overlay").GetComponent<Animator>();
         _overlayAnimator.enabled = false;
         _firstPersonController = GameObject.Find("Player").GetComponent<FirstPersonController>();
+        _audioSource = Camera.main.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,6 +50,7 @@ public class Haus2_Door : MonoBehaviour
         ProgressionManager.Instance.progress++;
         _firstPersonController.enabled = false;
         _overlayAnimator.enabled = true;
+        _audioSource.Stop();
         yield return new WaitForSeconds(animationClip.length);
         yield return StartCoroutine(_teleport.LoadNextScene(0));
     }

@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class Teleport : MonoBehaviour
 {
+    // A possible door sound, if the new scene is entered through a door
+    public AudioClip audioClip;
+    
     // Reference to the animation clip
     public AnimationClip animationClip;
 
@@ -34,6 +37,9 @@ public class Teleport : MonoBehaviour
     // Reference to the animator of the painting fragments
     private Animator _fragmentAnimator;
 
+    // The main camera's audio source
+    private AudioSource _audioSource;
+
 
     
 
@@ -45,6 +51,7 @@ public class Teleport : MonoBehaviour
         _firstPersonController = _player.GetComponent<FirstPersonController>();
         _animator = GameObject.Find("Blackscreen").GetComponent<Animator>();
         _fragment = GameObject.Find("Bildfragment").GetComponent<Image>();
+        _audioSource = Camera.main.GetComponent<AudioSource>();
     }
 
     // A coroutine to start a fade to black, show a fragment and then load the next scene
@@ -54,6 +61,10 @@ public class Teleport : MonoBehaviour
         _animator.SetTrigger("hasInteracted");
         // https://docs.unity3d.com/ScriptReference/WaitForSeconds.html
         yield return new WaitForSeconds(1.5f);
+        if(audioClip != null)
+        {
+            _audioSource.PlayOneShot(audioClip, 0.3f);
+        }
         if(ProgressionManager.Instance.progress == 0)
         {
             _fragmentAnimator = fragment1.GetComponent<Animator>();

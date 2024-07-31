@@ -1093,6 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15efe8c6ca308cc4c969a4da5014ce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: b152d9413bbf98b41967696c7b707a66, type: 3}
   animationClip: {fileID: 7400000, guid: d6abfedf4a12dcd459d4c74551c505f8, type: 2}
   fragmentAnimation: {fileID: 7400000, guid: 0ae435c20fed0a1489b56c86d25d2978, type: 2}
   fragment1: {fileID: 0}
@@ -3376,6 +3377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15efe8c6ca308cc4c969a4da5014ce5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
   animationClip: {fileID: 7400000, guid: d6abfedf4a12dcd459d4c74551c505f8, type: 2}
   fragmentAnimation: {fileID: 0}
   fragment1: {fileID: 0}
