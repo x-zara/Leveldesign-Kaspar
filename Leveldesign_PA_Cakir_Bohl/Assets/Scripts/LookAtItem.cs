@@ -51,10 +51,10 @@ public class LookAtItem : MonoBehaviour
             itemImage.gameObject.SetActive(true);
             StartCoroutine(_kasparCommentary.PlayAudioAndSetText(audioClip, subtitles));
         }
+        // If E key is pressed again: make the image disappear
         else if (Input.GetKeyDown(KeyCode.E) && inRange && itemImage.gameObject.activeSelf)
         {
             StartCoroutine(WaitForAnimation());
-            itemImage.gameObject.SetActive(true);
             pressE.gameObject.SetActive(true);
         }
 

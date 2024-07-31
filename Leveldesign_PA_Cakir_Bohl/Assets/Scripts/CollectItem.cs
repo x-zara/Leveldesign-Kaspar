@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class CollectItem : MonoBehaviour
 {
+    // The pressE command text
     public GameObject pressE;
 
+    // The key gameobject that needs to be found
     private GameObject _key;
     
+    // Reference to the lockedDoor script
     private LockedDoor _lockedDoor;
 
+    // Boolean to tell if the player is in range of the item to collect it
     private bool _inRange;
 
     
@@ -24,6 +28,7 @@ public class CollectItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Collects the item if the E key is pressed while the player is close enough
         if (Input.GetKeyDown(KeyCode.E) && _inRange)
         {
             pressE.gameObject.SetActive(false);
@@ -40,11 +45,11 @@ public class CollectItem : MonoBehaviour
         _inRange = true;
     }
 
-    // On Trigger Exit: set inRange to false, disable both text objects
+    // On Trigger Exit: set inRange to false, disable text object
     private void OnTriggerExit(Collider other)
     {
         _inRange = false;
         pressE.gameObject.SetActive(false);
-        // Start the coroutine to hide the image and then disable it after
+        
     }
 }

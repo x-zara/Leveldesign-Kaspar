@@ -49,7 +49,6 @@ public class LockedDoor : MonoBehaviour
 
         if (other.CompareTag("Player") && _hasKey)
         {
-            //ProgressionManager.Instance.progress++;
             StartCoroutine(_teleport.LoadNextScene(1));
         }
         else
@@ -68,7 +67,7 @@ public class LockedDoor : MonoBehaviour
         }
     }
 
-
+    // Do not show the text anymore when the player goes away
     private void OnTriggerExit(Collider other)
     {
         text.gameObject.SetActive(false);

@@ -42,11 +42,6 @@ public class ShowDescription : MonoBehaviour
             StartCoroutine(_kasparCommentary.PlayAudioAndSetText(audioClip, subtitles));
 
         }
-        /*else if(Input.GetKeyDown(KeyCode.E) && inRange && itemDescription.gameObject.activeSelf == true)
-        {
-            itemDescription.gameObject.SetActive(false);
-            pressE.gameObject.SetActive(true);
-        }*/
     }
 
     // On Trigger Enter: enable the 'press E' text and set inRange to true

@@ -57,12 +57,14 @@ public class Haus1_Cutscene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the player is close and presses E, start the cutscene
         if (Input.GetKeyDown(KeyCode.E) && pressE.gameObject.activeSelf && !_isPlaying)
             {
                 StartCoroutine(Cutscene());
             }
     }
 
+    // Show the command when the player enters the collider
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -71,10 +73,13 @@ public class Haus1_Cutscene : MonoBehaviour
         }
     }
 
+    // Hide the command when the player leaves the collider
     private void OnTriggerExit(Collider other)
     {
         pressE.gameObject.SetActive(false);
     }
+
+    // The cutscene to be played
     IEnumerator Cutscene()
     {
         _isPlaying = true;
@@ -96,6 +101,7 @@ public class Haus1_Cutscene : MonoBehaviour
         _bett._hasPlayed = true;
     }
 
+    // The audio from the other room
     private IEnumerator OtherRoomAudio(AudioClip audioClip, string subtitles)
     {
         _text.gameObject.SetActive(true);

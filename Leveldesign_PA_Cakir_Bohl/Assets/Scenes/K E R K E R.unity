@@ -1707,8 +1707,8 @@ RectTransform:
   - {fileID: 2022280568}
   - {fileID: 96976260}
   - {fileID: 441100281}
-  - {fileID: 1762785594}
   - {fileID: 1689098342}
+  - {fileID: 1762785594}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3113,13 +3113,18 @@ PrefabInstance:
     - target: {fileID: 299752073441431069, guid: 641ecbb9adcbcda46815ab2769894ee2,
         type: 3}
       propertyPath: m_Name
-      value: Bildfragment
+      value: Bild
       objectReference: {fileID: 0}
+    - target: {fileID: 1590459672926484333, guid: 641ecbb9adcbcda46815ab2769894ee2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: acb08cbdc48339646a4b3f1f1c02728a, type: 2}
     - target: {fileID: 3568109784817460254, guid: 641ecbb9adcbcda46815ab2769894ee2,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 59dcac9e9f032794fb33db2e27ed5480,
+      objectReference: {fileID: 21300000, guid: be244040543e5a24b86d2992201b24d3,
         type: 3}
     - target: {fileID: 6137968180346838912, guid: 641ecbb9adcbcda46815ab2769894ee2,
         type: 3}
@@ -3154,12 +3159,27 @@ PrefabInstance:
     - target: {fileID: 6137968180346838912, guid: 641ecbb9adcbcda46815ab2769894ee2,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1660
+      value: 2480.2656
       objectReference: {fileID: 0}
     - target: {fileID: 6137968180346838912, guid: 641ecbb9adcbcda46815ab2769894ee2,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1971
+      value: 3508
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137968180346838912, guid: 641ecbb9adcbcda46815ab2769894ee2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137968180346838912, guid: 641ecbb9adcbcda46815ab2769894ee2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137968180346838912, guid: 641ecbb9adcbcda46815ab2769894ee2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6137968180346838912, guid: 641ecbb9adcbcda46815ab2769894ee2,
         type: 3}

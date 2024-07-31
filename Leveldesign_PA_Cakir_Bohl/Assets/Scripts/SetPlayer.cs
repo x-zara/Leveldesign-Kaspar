@@ -11,10 +11,13 @@ public class SetPlayer : MonoBehaviour
     // The subtitles that are supposed to be displayed
     public string[] subtitles;
 
+    // Reference to the player object
     private GameObject _player;
 
+    // Reference to the first person controller scipt
     private FirstPersonController _firstPersonController;
 
+    // The transform to where the player should be set
     private Transform _teleportTransform;
 
     // Reference to the kaspar commentary script
@@ -22,9 +25,9 @@ public class SetPlayer : MonoBehaviour
 
     private void Start()
     {
+        // After visitting the houses, set the player to the defined position and rotation
         if (ProgressionManager.Instance.progress > 2)
         {
-            print("shshshs");
             _player = GameObject.Find("Player");
             _firstPersonController = _player.GetComponent<FirstPersonController>();
             _teleportTransform = GameObject.Find("Teleport_Transform").GetComponent<Transform>();
@@ -36,6 +39,7 @@ public class SetPlayer : MonoBehaviour
         }
     }
 
+    // Coroutine that triggers after being spawned in the second village
     private IEnumerator DorfKommentar()
     {
         yield return new WaitForSeconds(3);

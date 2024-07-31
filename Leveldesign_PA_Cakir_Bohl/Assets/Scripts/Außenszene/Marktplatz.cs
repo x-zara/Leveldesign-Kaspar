@@ -41,6 +41,8 @@ public class Marktplatz : MonoBehaviour
         
     }
 
+    
+    // Start the coroutine upon entering the trigger only once
     private void OnTriggerEnter(Collider other)
     {
         if(!_isPlaying)
@@ -51,12 +53,14 @@ public class Marktplatz : MonoBehaviour
         
     }
 
+    // Stop the coroutine upon leaving the trigger
     private void OnTriggerExit(Collider other)
     {
         StopCoroutine(MarktPlatzMurmeln());
         _text.gameObject.SetActive(false);
     }
 
+    // A couroutine to play audio sources in order
     private IEnumerator MarktPlatzMurmeln()
     {
         yield return OutsideAudio(audioSourcesMale[0], audioClipsMale[0], subtitlesMale[0]);
@@ -71,12 +75,13 @@ public class Marktplatz : MonoBehaviour
         yield return OutsideAudio(audioSourcesMale[0], audioClipsMale[4], subtitlesMale[4]);
     }
 
+    // A coroutine to play the corresponding audio clip on the defined audio source
     private IEnumerator OutsideAudio(AudioSource audioSource, AudioClip audioClip, string subtitles)
     {
-        _text.gameObject.SetActive(true);
-        audioSource.PlayOneShot(audioClip, 1f);
-        _text.text = subtitles;
+        //_text.gameObject.SetActive(true);
+        audioSource.PlayOneShot(audioClip, 1.3f);
+        //_text.text = subtitles;
         yield return new WaitForSeconds(audioClip.length + 1);
-        _text.gameObject.SetActive(false);
+        //_text.gameObject.SetActive(false);
     }
 }

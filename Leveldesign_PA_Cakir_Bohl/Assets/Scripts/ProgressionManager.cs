@@ -9,8 +9,10 @@ public class ProgressionManager : MonoBehaviour
     // stores the current progress
     public int progress;
 
+    // Bool to tell if the player inside the houses
     public bool wasInHouse = false;
 
+    // Makes Progression Manager static Instance
     public static ProgressionManager Instance;
 
     // https://learn.unity.com/tutorial/implement-data-persistence-between-scenes#634f8281edbc2a65c86270cb

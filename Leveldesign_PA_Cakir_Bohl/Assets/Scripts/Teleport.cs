@@ -7,24 +7,31 @@ using UnityEngine.UI;
 
 public class Teleport : MonoBehaviour
 {
-    //public GameObject text;
-
+    // Reference to the animation clip
     public AnimationClip animationClip;
 
+    // Reference to the fragment animation clip
     public AnimationClip fragmentAnimation;
 
+    // Reference to the first fragment
     public Image fragment1;
 
+    // Reference to the first fragment
     private Image _fragment;
     
+    // Player's transform
     private Transform _playerTransform;
 
+    // Reference to the player object
     private GameObject _player;
 
+    // Reference to the animator of the blackscreen
     private Animator _animator;
 
+    // Reference to the first person controller
     private FirstPersonController _firstPersonController;
 
+    // Reference to the animator of the painting fragments
     private Animator _fragmentAnimator;
 
 
@@ -40,7 +47,7 @@ public class Teleport : MonoBehaviour
         _fragment = GameObject.Find("Bildfragment").GetComponent<Image>();
     }
 
-    // A coroutine to get the lentgth of the animation clip and after it has played disable the image
+    // A coroutine to start a fade to black, show a fragment and then load the next scene
     public IEnumerator LoadNextScene(int sceneIndex)
     {
         _firstPersonController.gameObject.SetActive(false);

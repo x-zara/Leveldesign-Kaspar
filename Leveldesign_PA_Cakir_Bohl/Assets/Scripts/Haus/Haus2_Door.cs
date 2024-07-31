@@ -7,13 +7,16 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Haus2_Door : MonoBehaviour
 {
+    // Reference to the animation clip
     public AnimationClip animationClip;
     
     // Reference to the teleport script
     private Teleport _teleport;
 
+    // Reference to the overlay animator
     private Animator _overlayAnimator;
 
+    // Reference to the first person controller script
     private FirstPersonController _firstPersonController;
 
     // Start is called before the first frame update
@@ -31,11 +34,13 @@ public class Haus2_Door : MonoBehaviour
         
     }
 
+    // Start the coroutine when the player enters the trigger
     private void OnTriggerEnter(Collider other)
     {
         StartCoroutine(Door());
     }
 
+    // A coroutine that freezes the players position, disables the overlay and loads the next scene
     private IEnumerator Door()
     {
         ProgressionManager.Instance.progress++;

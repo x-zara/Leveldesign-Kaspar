@@ -5,11 +5,22 @@ using UnityEngine;
 
 public class KasparCommentary : MonoBehaviour
 {
+    // Reference to the first audio clip
     public AudioClip audioClip1;
+
+    // Reference to the second audio clip
     public AudioClip audioClip2;
+
+    // Reference to the first subtitle
     public string subtitles1;
+
+    // Reference to the second subtitle
     public string subtitles2;
+
+    // Reference to the subtitles game object's text
     private TMP_Text _text;
+
+    // Reference to the audio source
     private AudioSource _audioSource;
 
 
@@ -32,6 +43,7 @@ public class KasparCommentary : MonoBehaviour
         
     }
 
+    // A coroutine that plays the voiceline and shows the corresponding subtitle
     public IEnumerator PlayAudioAndSetText(AudioClip audioClip, string subtitles)
     {
         _text.gameObject.SetActive(true);
@@ -41,6 +53,7 @@ public class KasparCommentary : MonoBehaviour
         _text.gameObject.SetActive(false);
     }
 
+    // The monologue being triggered at the start of the game
     private IEnumerator IntroMonologue()
     {
         yield return new WaitForSeconds(2);
