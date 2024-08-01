@@ -14,12 +14,12 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             Time.timeScale = 1.0f;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        else if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Cursor.lockState = CursorLockMode.None;
         }
@@ -63,7 +63,7 @@ public class MenuManager : MonoBehaviour
     // Spiel starten -> Wechsel zur GameView Szene
     public void StartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void RestartGame()
@@ -71,13 +71,13 @@ public class MenuManager : MonoBehaviour
         //Szene neu starten
         ProgressionManager.Instance.progress = 0;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     // Zurück zum Hauptmenü über Pausemenü
     public void BackToMainMenu()
     {
         // MainMenu Szene laden
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 }

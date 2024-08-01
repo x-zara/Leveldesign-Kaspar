@@ -49,7 +49,7 @@ public class LockedDoor : MonoBehaviour
 
         if (other.CompareTag("Player") && _hasKey)
         {
-            StartCoroutine(_teleport.LoadNextScene(1));
+            StartCoroutine(_teleport.LoadNextScene(2));
         }
         else
         {

@@ -23,6 +23,9 @@ public class SetPlayer : MonoBehaviour
     // Reference to the kaspar commentary script
     private KasparCommentary _kasparCommentary;
 
+    // Reference to the audio source
+    private AudioSource _audioSource;
+
     private void Start()
     {
         // After visitting the houses, set the player to the defined position and rotation
@@ -35,6 +38,7 @@ public class SetPlayer : MonoBehaviour
             _player.transform.SetPositionAndRotation(_teleportTransform.position, _teleportTransform.rotation);
             _firstPersonController.gameObject.SetActive(true);
             _kasparCommentary = Camera.main.GetComponent<KasparCommentary>();
+            _audioSource = GameObject.Find("Kirchen_Sound").GetComponent<AudioSource>();
             StartCoroutine(DorfKommentar());
         }
     }
@@ -42,6 +46,7 @@ public class SetPlayer : MonoBehaviour
     // Coroutine that triggers after being spawned in the second village
     private IEnumerator DorfKommentar()
     {
+        _audioSource.PlayOneShot(audioClips[3], 0.5f);
         yield return new WaitForSeconds(3);
         yield return _kasparCommentary.PlayAudioAndSetText(audioClips[0], subtitles[0]);
         yield return new WaitForSeconds(3);

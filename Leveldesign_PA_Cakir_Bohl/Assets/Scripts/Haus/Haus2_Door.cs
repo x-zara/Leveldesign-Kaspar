@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Haus2_Door : MonoBehaviour
 {
@@ -52,6 +51,6 @@ public class Haus2_Door : MonoBehaviour
         _overlayAnimator.enabled = true;
         _audioSource.Stop();
         yield return new WaitForSeconds(animationClip.length);
-        yield return StartCoroutine(_teleport.LoadNextScene(0));
+        yield return StartCoroutine(_teleport.LoadNextScene(1));
     }
 }

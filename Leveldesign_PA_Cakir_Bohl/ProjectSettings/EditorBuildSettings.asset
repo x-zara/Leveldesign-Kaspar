@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start-Screen.unity
+    guid: 45719497d4e4ccb41b4c57445944f549
+  - enabled: 1
     path: "Assets/Scenes/Au\xDFenszene.unity"
     guid: 89929e2002fbaa74ca3455b1f43d5c6a
   - enabled: 1
@@ -17,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/K E R K E R.unity
     guid: 18546c34668a4b14299b77374c2a0362
-  - enabled: 1
-    path: Assets/Scenes/Start-Screen.unity
-    guid: 45719497d4e4ccb41b4c57445944f549
   m_configObjects: {}
