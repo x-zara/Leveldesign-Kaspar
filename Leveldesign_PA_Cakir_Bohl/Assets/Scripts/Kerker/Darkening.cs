@@ -12,7 +12,7 @@ public class Darkening : MonoBehaviour
 
     // Reference to the audio clip
     public AudioClip audioClip;
-    
+
     // Reference to canvas group component of the blackscreen
     private CanvasGroup _blackscreen;
 
@@ -56,13 +56,12 @@ public class Darkening : MonoBehaviour
 
             if(!_isPlaying)
             {
-                _audioSource.PlayOneShot(audioClip, 1f);
                 _isPlaying = true;
             }
 
             if (_blackscreen.alpha >= 1)
             {
-            StartCoroutine(_teleport.LoadNextScene(3));
+            StartCoroutine(_teleport.LoadNextScene(4));
             }
         }
         
@@ -74,6 +73,7 @@ public class Darkening : MonoBehaviour
         {
             _hasEntered = true;
             fogWall.SetActive(true);
+            _audioSource.PlayOneShot(audioClip);
         }
         
     }

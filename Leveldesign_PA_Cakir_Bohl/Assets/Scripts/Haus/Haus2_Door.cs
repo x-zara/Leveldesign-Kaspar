@@ -46,7 +46,7 @@ public class Haus2_Door : MonoBehaviour
     // A coroutine that freezes the players position, disables the overlay and loads the next scene
     private IEnumerator Door()
     {
-        ProgressionManager.Instance.progress++;
+        //ProgressionManager.Instance.progress++;
         _firstPersonController.enabled = false;
         _overlayAnimator.enabled = true;
         _audioSource.Stop();

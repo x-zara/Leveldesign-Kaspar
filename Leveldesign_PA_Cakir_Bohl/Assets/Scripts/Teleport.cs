@@ -61,7 +61,7 @@ public class Teleport : MonoBehaviour
         _animator.SetTrigger("hasInteracted");
         // https://docs.unity3d.com/ScriptReference/WaitForSeconds.html
         yield return new WaitForSeconds(1.5f);
-        if(audioClip != null)
+        if(audioClip != null && ProgressionManager.Instance.progress < 4)
         {
             _audioSource.PlayOneShot(audioClip, 0.3f);
         }

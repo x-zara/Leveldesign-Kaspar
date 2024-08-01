@@ -58,6 +58,6 @@ public class KerkerAudio : MonoBehaviour
         yield return _kasparCommentary.PlayAudioAndSetText(audioClips[1], subtitles[1]);
         _animatorPainting.SetBool("hasStarted", false);
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
 }
